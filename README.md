@@ -1,5 +1,5 @@
-<img src="https://www.clipartmax.com/png/small/189-1893331_treehouse-logo-png-transparent-svg-vector-freebie-supply-teamtreehouse-svg.png" alt="Treehouse Logo Png Transparent Svg Vector Freebie Supply - Teamtreehouse Svg 
-
+<img src="https://upload.wikimedia.org/wikipedia/en/a/a3/Treehouse%27s_logo_%28Jan_2015%29.png" alt="Treehouse Logo Png Transparent Svg Vector Freebie Supply - Teamtreehouse Svg" align="center" />
+     
 # Treehouse-project-quote-generator-unit-01
 Treehouse project that displays random famous quotes each time a button is clicked.
 
