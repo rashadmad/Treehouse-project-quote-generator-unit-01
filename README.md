@@ -5,7 +5,7 @@ Treehouse project that displays random famous quotes each time a button is click
 For this first project, you'll create an app that displays random famous quotes each time a button is clicked. You will select your own quotes from famous historical figures, artists, scientists, celebrities, etc.
 
 ### example
-``` "Every great developer you know got there by solving problems they were unqualified to solve until they actually did it." - _Patrick McKenzie_ ```
+>"Every great developer you know got there by solving problems they were unqualified to solve until they actually did it." - _Patrick McKenzie_ 
 
 You'll locate and select your own quotes. Please select tasteful, positive and uncontroversial quotes, for the sake of this project. Thank you.
 
