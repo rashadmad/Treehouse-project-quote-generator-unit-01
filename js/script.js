@@ -8,6 +8,8 @@ project 1 - A Random Quote Generator
   // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
 // I will need to manipulate the dom in particular the "quote" "source" "citation" and "year" classes
+// I perticulalry think refrenceing dom elements can get ugly so I created a helper function
+
 // It would be cool to have some sort of fade in and out effect to transition the change in data but not a requierment
 // I will need to display at least five quotes
 // 
