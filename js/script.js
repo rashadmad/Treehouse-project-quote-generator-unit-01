@@ -8,7 +8,15 @@ project 1 - A Random Quote Generator
   // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
 // I will need to manipulate the dom in particular the "quote" "source" "citation" and "year" classes
-// I perticulalry think refrenceing dom elements can get ugly so I created a helper function
+// so I will need to create varibles to be refrenced later
+const quoteElement = document.createElement('quote'); 
+const sourceElement = document.createElement('source'); 
+const citationElement = document.createElement('citation'); 
+const yearElement = document.createElement('year'); 
+
+//default data for before a button is pressed
+const defaultQuote = "There is no passion to be found playing small - in settling for a life that is less that the one you are capable of living"
+const defaultPerson = "Nelson Mandela"
 
 // It would be cool to have some sort of fade in and out effect to transition the change in data but not a requierment
 // I will need to display at least five quotes
@@ -24,6 +32,15 @@ project 1 - A Random Quote Generator
  * date 'optional'
  * citation 'optional'
 ***/
+class QuoteObj {
+  constructor(quoteObj = defaultQuote,person = defaultPerson,bio,date,citation) {
+    this.quoteBody = quoteObj,
+    this.person = person,
+    this.bio = bio,
+    this.date = date,
+    this.citation = citation
+  }
+}
 
 /***
  * `getRandomQuote` function
