@@ -26,6 +26,10 @@ h1 {
   text-shadow: 1px 1px 1px rgba(50, 50, 50, 0.3);
 }
 
+h2 {
+  padding: 0 10px 10px 10px;
+}
+
 .load-quote {
   color: #fff;
   text-shadow: 1px 1px 1px rgba(50, 50, 50, 0.3);
@@ -117,7 +121,7 @@ h1 {
 
 @media (min-width: 768px) {
   body {
-    padding: 25px;
+    padding: 0;
   }
 
   header {
@@ -130,6 +134,17 @@ h1 {
     margin-top: 20px;
     margin-right: 5px;
     border-bottom: 4px solid rgba(0, 0, 0, 0.3);
+  }
+
+  main {
+    padding: 20px;height: 550px;
+    margin: 0 auto -50px;
+  }
+
+  footer {
+    position:fixed;bottom:0;left:0;right:0;height:100px;
+    background: rgb(246,0,0);
+    background: linear-gradient(180deg, rgba(246,0,0,1) 0%, rgba(250,65,1,1) 32%, rgba(0,0,0,1) 32%, rgba(0,0,0,1) 68%, rgba(19,92,0,1) 68%, rgba(19,92,0,1) 100%);
   }
 
   .load-quote {
