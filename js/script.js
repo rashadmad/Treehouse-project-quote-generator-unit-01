@@ -29,14 +29,16 @@ const yearElement = document.createElement('year');
  * citation 'optional'
 ***/
 class QuoteObj {
-  constructor(quoteObj = "There is no passion to be found playing small - in settling for a life that is less that the one you are capable of living",person = "Nelson Mandela",bio,date,citation) {
-    this.quoteBody = quoteObj,
+  constructor(quoteBody = '"There is no passion to be found playing small - in settling for a life that is less that the one you are capable of living"',person = "Nelson Mandela",bio = "Nelson was a South African anti-apartheid revolutionary, political leader, and philanthropist who served as President of South Africa from 1994 to 1999. He was the country's first black head of state and the first elected in a fully representative democratic election. His government focused on dismantling the legacy of apartheid by tackling institutionalised racism and fostering racial reconciliation. Ideologically an African nationalist and socialist, he served as the president of the African National Congress",date = 1995,citation = "Long Walk to Freedom: The Autobiography of Nelson Mandela") {
+    this.quoteBody = quoteBody,
     this.person = person,
     this.bio = bio,
     this.date = date,
     this.citation = citation
   }
 }
+
+"True peace is not merely the absence of tension; it is the presence of justice."  
 
 /***
  * `getRandomQuote` function
