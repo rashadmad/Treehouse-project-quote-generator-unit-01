@@ -16,21 +16,13 @@ project 1 - A Random Quote Generator
 /*** 
  * `quotes` array 
 ***/
-//Here I will need to make an array of objects
-/*** this object class will have a
- * Quote
- * person 
- * date 'optional'
- * citation 'optional'
-***/
-
-
-console.log(quotes);
 
 /***
  * `getRandomQuote` function
 ***/
 //obviously this function will need some type of randomising funtionality, as we all know this can be a pain in javascript
+let randomNumber = (low, high) => Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+console.log(randomNumber(1,quoteAmount));
 //It will need to interact with the array of quotes
 //It will return a quote object
 //it will be intiatied like this getRandomQuote() 

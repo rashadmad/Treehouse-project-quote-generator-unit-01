@@ -1,3 +1,10 @@
+//Here I will need to make an array of objects
+/*** this object class will have a
+ * Quote
+ * person 
+ * date 'optional'
+ * citation 'optional'
+***/ 
  const quotes = [
     {   
         "image" : "https://en.wikipedia.org/wiki/File:Martin_Luther_King,_Jr..jpg",
@@ -42,3 +49,5 @@
         "citation" : "Stride Toward Freedom" 
     }
 ]
+
+const quoteAmount = quotes.length;
