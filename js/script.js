@@ -30,12 +30,12 @@ project 1 - A Random Quote Generator
    * `printQuote` function
   ***/
   //add data to dom
-  //isMember ? '$2.00' : '$10.00'
   let printQuote = () => {
-    quoteElement.textContent = getRandomQuote().quoteBody; 
-    getRandomQuote().person ? sourceElement.textContent = getRandomQuote().person : sourceElement.textContent = "";
-    getRandomQuote().citationElement ? citationElement.textContent = getRandomQuote().citationElement : citationElement.textContent = "";
-    getRandomQuote().date ? yearElement.textContent = getRandomQuote().date : yearElement.textContent = "";
+    const quoteObject = getRandomQuote();
+    quoteElement.textContent = quoteObject.quoteBody; 
+    quoteObject.person ? sourceElement.textContent = quoteObject.person : sourceElement.textContent = "";
+    quoteObject.citation ? citationElement.textContent = quoteObject.citation : citationElement.textContent = "";
+    quoteObject.date ? yearElement.textContent = quoteObject.date : yearElement.textContent = "works";
   }
   //ok so I want this function to load when the page loads so I will use onload
   window.onload = () => printQuote();
