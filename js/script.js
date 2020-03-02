@@ -20,7 +20,18 @@ project 1 - A Random Quote Generator
    * `getRandomQuote` function
   ***/
   //obviously this function will need some type of randomising funtionality, as we all know this can be a pain in javascript
-  const getRandomNumber = () => Math.floor(Math.random() * (quoteAmount - 1 + 1)) + 0;
+  const getRandomNumber = () => {
+    //I got picky I wanted my randomizer to not be the same thing twice in a row technically that is not random but ¯\_(ツ)_/¯
+    let randomNumber = Math.floor(Math.random() * (quoteAmount - 1 + 1)) + 0;
+    if (getRandomNumber === randomNumber){
+      return randomNumber++;
+    //I noticed it would not work in the cases that we get to the end of the array   
+    } else if (getRandomNumber === quoteAmount){
+      return randomNumber--;
+    } else {
+      return randomNumber;
+    }
+  }
   //It will need to interact with the array of quotes
   //It will return a quote object
   const getRandomQuote = () => quotes[getRandomNumber()]; 
@@ -36,6 +47,7 @@ project 1 - A Random Quote Generator
     quoteObject.person ? sourceElement.textContent = quoteObject.person : sourceElement.textContent = "";
     quoteObject.citation ? citationElement.textContent = quoteObject.citation : citationElement.textContent = "";
     quoteObject.date ? yearElement.textContent = quoteObject.date : yearElement.textContent = "works";
+
   }
   //ok so I want this function to load when the page loads so I will use onload
   window.onload = () => printQuote();
