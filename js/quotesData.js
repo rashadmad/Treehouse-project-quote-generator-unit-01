@@ -5,6 +5,10 @@
  * date 'optional'
  * citation 'optional'
 ***/ 
+
+/*** 
+ * `quotes` array 
+***/
  const quotes = [
     {   
         "image" : "https://en.wikipedia.org/wiki/File:Martin_Luther_King,_Jr..jpg",
