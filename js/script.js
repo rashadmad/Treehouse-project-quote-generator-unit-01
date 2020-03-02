@@ -37,6 +37,11 @@ project 1 - A Random Quote Generator
     getRandomQuote().citationElement ? citationElement.textContent = getRandomQuote().citationElement : citationElement.textContent = "";
     getRandomQuote().date ? yearElement.textContent = getRandomQuote().date : yearElement.textContent = "";
   }
+  //ok so I want this function to load when the page loads so I will use onload
+  window.onload = () => printQuote();
+  
+
+
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
