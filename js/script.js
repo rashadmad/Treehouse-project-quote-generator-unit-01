@@ -23,15 +23,20 @@ project 1 - A Random Quote Generator
   const getRandomNumber = () => Math.floor(Math.random() * (quoteAmount - 1 + 1)) + 0;
   //It will need to interact with the array of quotes
   //It will return a quote object
-  const getRandomQuote = (whichQuote) => quotes[getRandomNumber()]; 
+  const getRandomQuote = () => quotes[getRandomNumber()]; 
   //it will be intiatied like this getRandomQuote() 
 
   /***
    * `printQuote` function
   ***/
   //add data to dom
-  //let printQuote = () => console.log(quotes.getRandomNumber())
-  let printQuote = () => quoteElement.textContent = getRandomQuote.quoteBody; 
+  //isMember ? '$2.00' : '$10.00'
+  let printQuote = () => {
+    quoteElement.textContent = getRandomQuote().quoteBody; 
+    sourceElement.textContent = getRandomQuote().sourceElement;
+    getRandomQuote().citationElement ? citationElement.textContent = getRandomQuote().citationElement : citationElement.textContent = "";
+    getRandomQuote().yearElement ? yearElement.textContent = getRandomQuote().yearElement : yearElement.textContent = "";
+  }
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
