@@ -32,11 +32,10 @@ project 1 - A Random Quote Generator
   //add data to dom
   //isMember ? '$2.00' : '$10.00'
   let printQuote = () => {
-    console.log(getRandomQuote().sourceElement)
     quoteElement.textContent = getRandomQuote().quoteBody; 
-    getRandomQuote().sourceElement ? sourceElement.textContent = getRandomQuote().sourceElement : sourceElement.textContent = "";
+    getRandomQuote().person ? sourceElement.textContent = getRandomQuote().person : sourceElement.textContent = "";
     getRandomQuote().citationElement ? citationElement.textContent = getRandomQuote().citationElement : citationElement.textContent = "";
-    getRandomQuote().yearElement ? yearElement.textContent = getRandomQuote().yearElement : yearElement.textContent = "";
+    getRandomQuote().date ? yearElement.textContent = getRandomQuote().date : yearElement.textContent = "";
   }
 /***
  * click event listener for the print quote button
