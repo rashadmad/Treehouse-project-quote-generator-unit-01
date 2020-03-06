@@ -46,7 +46,8 @@
         "date" : 1978,
         "citation" : "Still I rise, poem"
     },
-    {
+    {   
+        "image" : "https://en.wikipedia.org/wiki/File:Soundtrack_Beat_Battle_Judging_Panel_March2011_(cropped).jpg",
         "quoteBody" : "Sometimes you have to take two steps back to take ten forward.",
         "person" :"Nipsey Hussle",
         "bio" : "often stylized as Nipsey Hu$$le, was an American rapper, activist, and entrepreneur. Emerging from the West Coast hip hop scene in the mid-2000s, Hussle independently released his first mixtape, Slauson Boy Volume 1, to moderate local success, which led to him being signed to Cinematic Music Group and Epic Records." ,
