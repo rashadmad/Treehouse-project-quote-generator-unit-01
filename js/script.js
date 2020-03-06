@@ -15,44 +15,40 @@ project 1 - A Random Quote Generator
 
 //this will be activated upon a button click
 //the getRandomQuote function will be invoked here
-  /***
-   * helper function for checking is the objects in an array are the same
-  ***/
-  const sameNum = (myArray) => (myArray[0] === myArray[1]) ? true : false;
-  const myCeil = (myArray,comparedArrayLength) => (myArray.length > comparedArrayLength) ? 1 : 0;
+  
   /***
    * `getRandomQuote` function
   ***/
   //obviously this function will need some type of randomising funtionality, as we all know this can be a pain in javascript
   const generateRandNum = () => Math.floor(Math.random() * (quoteAmount - 1 + 1)) + 0; 
+  //const checkForMatch = new Map();
+
+  ///I want to have a diffrent quote displayed everytime its clicked
+  //create an array keeping track of the quote indexs of the quotes that have been displayed this will allow use to compare the quotes we have displayed already with new quotes
+  let randomQuotesArray = []
+
+  //populate that array with the choosen quote index number
+  let addQuoteToindex = (array) => array.push(generateRandNum());
   
-  //check if this random number is not the same as the last one if there was a last one
- 
-  ///first create a empty array
-  let generatedRandNumArray = [];
-    
-  ///next add the first generated random number to the array
-    let addQuoteToArray = () => {
-      if (generatedRandNumArray.length == 5){
-        //grabage cleaning make sure that this array has at most two items in it
-         generatedRandNumArray.shift();
-      }
-      generatedRandNumArray.push(generateRandNum());
-    };
+  //here we take the last item in the array and generate a random quote obj
+  const getRandomQuote = () => quotes[randomQuotesArray[randomQuotesArray.length]] 
 
-  //It will need to interact with the array of quotes
-  //It will return a quote object
-
-  //it will be intiatied like this getRandomQuote() 
+  //this function will compare the last two items of an array if both items are the same this will ring true
+  const quoteMatch = (array) => {
+    const compareArrayItems = array.length === array.length - 1;
+    if(array.length > 1){
+      return compareArrayItems ? true : false
+    }
+  }
 
   /***
    * `printQuote` function
   ***/
   //add data to dom
   let printQuote = () => {
-    addQuoteToArray();
-    const mod = () => sameNum(generatedRandNumArray) ? 1 : 0
-    const getRandomQuote = () => quotes[generateRandNum() + mod() - myCeil(generatedRandNumArray,quoteAmount)];
+    //add a quote index to an array
+    addQuoteToindex(randomQuotesArray);
+    ///need to take note of every number added to the array
     const quoteObject = getRandomQuote();
     quoteElement.textContent = quoteObject.quoteBody; 
     sourceElement.textContent = quoteObject.person;
