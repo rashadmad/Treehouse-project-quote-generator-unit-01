@@ -24,38 +24,50 @@ project 1 - A Random Quote Generator
   //const checkForMatch = new Map();
 
   ///I want to have a diffrent quote displayed everytime its clicked
-  //create an array keeping track of the quote indexs of the quotes that have been displayed this will allow use to compare the quotes we have displayed already with new quotes
+  //create an array keeping track of the quote indexs of the quotes that have been displayed this will allow use to compare the quotes we have displayed with new quotes
   let randomQuotesArray = []
 
-  //populate that array with the choosen quote index number
-  let addQuoteToindex = (array) => array.push(generateRandNum());
-  
-  //here we take the last item in the array and generate a random quote obj
-  const getRandomQuote = () => quotes[randomQuotesArray[randomQuotesArray.length]] 
-
-  //this function will compare the last two items of an array if both items are the same this will ring true
-  const quoteMatch = (array) => {
-    const compareArrayItems = array.length === array.length - 1;
-    if(array.length > 1){
-      return compareArrayItems ? true : false
+  //this helper function will compare the last two items of an array if both items are the same this will ring true
+  const numMatch = (numA,numB) => {
+    const foundMatch = numA === numB;
+    if (randomQuotesArray.length > 1 && foundMatch){
+      return foundMatch ? true : false
+      console.log('match found of 5');
     }
+      return false
+      console.log('match found');
+  }
+
+  //populate that array with the choosen quote index number NOT with the quotes obj
+  //but first fillter that number make sure its not a reapeat
+  let addQuoteToindex = (array,num) => {
+    let filteredNum = num;
+    if (numMatch(randomQuotesArray[filteredNum - 2],randomQuotesArray[filteredNum - 1]) && num === randomQuotesArray[filteredNum - 1]) {
+      filteredNum--
+    } else if (numMatch(randomQuotesArray[filteredNum - 2],randomQuotesArray[filteredNum - 1])) {
+      filteredNum++
+    }
+    
+    array.push(filteredNum);
   }
 
   /***
    * `printQuote` function
   ***/
   //add data to dom
-  let printQuote = () => {
-    //add a quote index to an array
-    addQuoteToindex(randomQuotesArray);
-    ///need to take note of every number added to the array
-    const quoteObject = getRandomQuote();
+  const printQuote = () => {
+
+    //add a quote index to the array
+    addQuoteToindex(randomQuotesArray,generateRandNum());
+    console.log(generateRandNum());
+    //here we take the last item in the array and generate a random quote obj
+    let quoteObject = quotes[randomQuotesArray.length - 1];
+    console.log(randomQuotesArray);
     quoteElement.textContent = quoteObject.quoteBody; 
     sourceElement.textContent = quoteObject.person;
     //these teneries purpose is to validate those values in some cases the data wont be populated
     quoteObject.citation ? citationElement.textContent = quoteObject.citation : citationElement.textContent = "";
     quoteObject.date ? yearElement.textContent = quoteObject.date : yearElement.textContent = "";
-    console.log(generateRandNum());
   }
   //ok so I want this function to load when the page loads so I will use onload
   window.onload = () => printQuote();
