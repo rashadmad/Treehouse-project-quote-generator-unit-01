@@ -27,42 +27,30 @@ project 1 - A Random Quote Generator
   //create an array keeping track of the quote indexs of the quotes that have been displayed this will allow use to compare the quotes we have displayed with new quotes
   let randomQuotesArray = []
 
-  //this helper function will compare the last two items of an array if both items are the same this will ring true
-  const numMatch = (numA,numB) => {
-    const foundMatch = numA === numB;
-    if (randomQuotesArray.length > 1 && foundMatch){
-      return foundMatch ? true : false
-      console.log('match found of 5');
-    }
-      return false
-      console.log('match found');
-  }
+  //I cant allow this array to get too big 
+  const addNumToArray = (array,num) => array.push(num);
 
-  //populate that array with the choosen quote index number NOT with the quotes obj
-  //but first fillter that number make sure its not a reapeat
-  let addQuoteToindex = (array,num) => {
-    let filteredNum = num;
-    if (numMatch(randomQuotesArray[filteredNum - 2],randomQuotesArray[filteredNum - 1]) && num === randomQuotesArray[filteredNum - 1]) {
-      filteredNum--
-    } else if (numMatch(randomQuotesArray[filteredNum - 2],randomQuotesArray[filteredNum - 1])) {
-      filteredNum++
-    }
-    
-    array.push(filteredNum);
-  }
+  const reduceArray = (array) => array.shift();
+
+  const increaseNum = (num) => num++;
+
+  const decreaseNum = (num) => num--;
+
+  const matchNum = (numA,numB) => numA === numB ? true : false;
+
+  
 
   /***
    * `printQuote` function
   ***/
   //add data to dom
   const printQuote = () => {
-
+    reduceArray(randomQuotesArray);
+    let quoteNumber = randomQuotesArray.length - 1;
+    let quoteObject = quotes[quoteNumber];
     //add a quote index to the array
     addQuoteToindex(randomQuotesArray,generateRandNum());
-    console.log(generateRandNum());
     //here we take the last item in the array and generate a random quote obj
-    let quoteObject = quotes[randomQuotesArray.length - 1];
-    console.log(randomQuotesArray);
     quoteElement.textContent = quoteObject.quoteBody; 
     sourceElement.textContent = quoteObject.person;
     //these teneries purpose is to validate those values in some cases the data wont be populated
