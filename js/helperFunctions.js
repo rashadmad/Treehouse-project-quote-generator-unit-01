@@ -1,30 +1,35 @@
 //good old helper functions 
 const addNumToArray = (array,num) => array.push(num),
-      reduceArray = (array) => array.shift(),
-      increaseNum = (num) => num += 1,
-      decreaseNum = (num) => num -= 1,
-      findMatch = (numA,numB) => numA === numB ? true : false;
-      addNumberToArray = (array,num) => arry.push(num)
+      //find a match between two numbers
+      findMatch = (numA,numB) => numA === numB ? true : false,
+      //add a new number to this array
+      addNumberToArray = (array,num) => array.push(num),
+      //create random number
+      getRandomNumber = () => Math.floor(Math.random() * (quotes.length - 1 + 1)) + 0;
+      //remove duplicates from an array
+      removeDuplicates = (array) => array.splice(0, array.length, ...(new Set(array))),
+       // gets a random quote from the
+      getRandomQuote = (rand) => quotes[rand];
 
-let randomArray = []
-   
-//return Math.floor(Math.random() * (max - min + 1)) + min;
-let populateRandomizerArray = (arry,max,min) => {
-let randomizer = Math.floor(Math.random() * (max - 1 + 1)) + 0;
-const firstElement = randomArray[randomArray.length - 1];
-const secondElement = randomArray[randomArray.length - 2]; 
-    if(arry.length >= 1 && findMatch(firstElement,secondElement) && firstElement === max) {
-        arry.push(randomizer++)
-        console.log(randomizer)
-    } else if (arry.length >= 1 && findMatch(firstElement,secondElement) && firstElement === max) {
-        arry.push(randomizer--)
-        console.log(randomizer)
-    } else {
-        arry.push(randomizer)
+//create an array to store random generated number      
+let pickedNumbersArray = []
+
+const duplicateFilter = (array) => {
+    
+    const hasMoreThanOne = array.length > 1 
+    //after cheking if the array is populated then also check for a match of the last and second to last elements of the array
+    
+    if(hasMoreThanOne) {
+
+    const firstElement = array[array.length - 1];
+    const secondElement = array[array.length - 2]; 
+        console.log(firstElement)
+        console.log(secondElement)
+        if(findMatch(firstElement,secondElement)) {
+            array = removeDuplicates(array);
+        } 
     }
-    console.log(randomArray)
+    return array
 }
 
-const randomNumber = () => randomArray[randomArray.length - 1]
-
-const emptyArray = () => randomArray.shift();
+pickedNumbersArray = duplicateFilter(pickedNumbersArray);

@@ -12,30 +12,29 @@ project 1 - A Random Quote Generator
   /***
    * `getRandomQuote` function
   ***/
-  const getRandomQuote = (rand) => quotes[randomNumber()];
-  console.log(randomNumber())
+
+ 
+ const addQuotesToDom = (array) => { 
+    //add a number to our basic array every time we press the button
+    addNumberToArray(pickedNumbersArray,getRandomNumber());
+    //pull a quote from our quotes array  
+    const quoteObject = getRandomQuote(array[array.length - 1]);
+    quoteElement.textContent = quoteObject.quoteBody; 
+    sourceElement.textContent = quoteObject.person;
+    citationElement.textContent = quoteObject.citation;
+  }
+
   /***
    * `printQuote` function
   ***/
   //add data to dom
-   const printQuote = (quoteObject) => {
-     populateRandomizerArray(randomArray,quoteAmount,0)
-     quoteElement.textContent = quoteObject.quoteBody; 
-     sourceElement.textContent = quoteObject.person;
-     citationElement.textContent = quoteObject.citation;
-     if(randomArray.length === 3){
-       emptyArray()
-      };
-   }
-  window.onload = () => printQuote(getRandomQuote());
-  
-console.log(populateRandomizerArray(randomArray,quoteAmount,0))
+   const printQuote = () => addQuotesToDom(pickedNumbersArray)
+
+  window.onload = () => printQuote();
 
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
 ***/
 
-document.getElementById('load-quote').addEventListener("click", function(){
-  printQuote(getRandomQuote())
-}, false); 
+document.getElementById('load-quote').addEventListener("click", printQuote(), false); 
