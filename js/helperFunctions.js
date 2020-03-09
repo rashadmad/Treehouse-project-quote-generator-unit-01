@@ -12,12 +12,14 @@ let populateRandomizerArray = (arry,max,min) => {
 let randomizer = Math.floor(Math.random() * (max - 1 + 1)) + 0;
 const firstElement = randomArray[randomArray.length - 1];
 const secondElement = randomArray[randomArray.length - 2]; 
-    if(arry.length >= 1){
-         if(findMatch(firstElement,secondElement)) {
-            console.log("match found");
-         }
+    if(arry.length >= 1 && findMatch(firstElement,secondElement) && firstElement === max) {
+        console.log(randomizer)
+    } else if (arry.length >= 1 && findMatch(firstElement,secondElement) && firstElement === max) {
+
+        console.log(randomizer)
+    } else {
+        arry.push(randomizer)
     }
-    arry.push(randomizer)
     console.log(randomArray)
 }
 
