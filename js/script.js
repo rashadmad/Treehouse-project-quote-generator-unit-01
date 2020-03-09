@@ -23,7 +23,9 @@ project 1 - A Random Quote Generator
      quoteElement.textContent = quoteObject.quoteBody; 
      sourceElement.textContent = quoteObject.person;
      citationElement.textContent = quoteObject.citation;
-     console.log(randomNumber());
+     if(randomArray.length === 3){
+       emptyArray()
+      };
    }
   window.onload = () => printQuote(getRandomQuote());
   
