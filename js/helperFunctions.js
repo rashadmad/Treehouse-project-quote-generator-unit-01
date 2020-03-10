@@ -18,6 +18,7 @@ let pickedNumbersArray = []
 
 const duplicateFilter = (array) => {
     const hasMoreThanOne = array.length > 1 
+    const arrayFull = array.length === 4;
 
     //after cheking if the array is populated then also check for a match of the last and second to last elements of the array
     
@@ -27,23 +28,19 @@ const duplicateFilter = (array) => {
     let secondItem = array[array.length - 2]; 
     const max = array.length
     const min = 1
-        console.log(firstItem)
-        console.log(secondItem)
         
         if(findMatch(firstItem,secondItem) && firstItem === max) {
-            console.log("two fives");
             addNumToArray(array,secondItem -= 1);
             return array
         } else if(findMatch(firstItem,secondItem) && firstItem === min){
-            console.log("two ones");
-            addNumToArray(array,secondItem -= 1);
+            addNumToArray(array,secondItem += 1);
             return array
         } else if(findMatch(firstItem,secondItem)){
-            console.log("everything else");
             addNumToArray(array,secondItem += 1);
             return array
         }
     } 
+
     //returns an array with out any duplicates
     return array
 }

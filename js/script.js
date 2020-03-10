@@ -18,7 +18,6 @@ project 1 - A Random Quote Generator
     quoteElement.textContent = quoteObject.quoteBody; 
     sourceElement.textContent = quoteObject.person;
     citationElement.textContent = quoteObject.citation;
-    console.log("here is the filtered array " + filteredArray)
   }
 
   /***
