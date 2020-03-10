@@ -25,14 +25,24 @@ const duplicateFilter = (array) => {
 
     let firstItem = array[array.length - 1];
     let secondItem = array[array.length - 2]; 
+    const max = array.length
+    const min = 1
         console.log(firstItem)
         console.log(secondItem)
         
-        if(findMatch(firstItem,secondItem)) {
-            let newArray = removeDuplicates(array);
-            newArray.
-            return newArray 
-        } 
+        if(findMatch(firstItem,secondItem) && firstItem === max) {
+            console.log("two fives");
+            addNumToArray(array,secondItem -= 1);
+            return array
+        } else if(findMatch(firstItem,secondItem) && firstItem === min){
+            console.log("two ones");
+            addNumToArray(array,secondItem -= 1);
+            return array
+        } else if(findMatch(firstItem,secondItem)){
+            console.log("everything else");
+            addNumToArray(array,secondItem += 1);
+            return array
+        }
     } 
     //returns an array with out any duplicates
     return array
