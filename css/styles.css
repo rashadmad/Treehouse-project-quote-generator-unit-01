@@ -7,6 +7,9 @@
 
 body {
   background-color: rgb(58, 193, 98);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   color: white;
   font-family: 'Playfair Display', serif;
   padding: 5px;

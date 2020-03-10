@@ -22,9 +22,10 @@ project 1 - A Random Quote Generator
     const citationObject = quoteObject.citation;
     const yearObject = quoteObject.date;
     //adds the citation but in some cases there wont be one so add a blank space
-    const citationString = citationObject ? citationObject : " ";
+    const citationString = citationObject ? citationObject : "";
     //adds year to the string
-    const yearString = yearObject ? yearObject : "  ";
+    const yearString = yearObject ? yearObject : "";
+    document.body.style.backgroundImage = "url(" + quoteObject.image + ")";
 
     personElement.innerHTML = quoteObject.person + '<span class="citation">' + citationString + '</span><span class="year">' + yearString + '</span>'
 
