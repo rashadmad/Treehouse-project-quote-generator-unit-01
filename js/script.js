@@ -15,8 +15,10 @@ project 1 - A Random Quote Generator
     const filteredArray = duplicateFilter(pickedNumbersArray);
     //pull a quote from our quotes array  
     const quoteObject = getRandomQuote(array[array.length - 1]);
+    //add content to elements
     quoteElement.textContent = quoteObject.quoteBody; 
-    sourceElement.textContent = quoteObject.person;
+    personElement.textContent = quoteObject.person;
+    yearElement.textContent = quoteObject.year;
     citationElement.textContent = quoteObject.citation;
   }
 
