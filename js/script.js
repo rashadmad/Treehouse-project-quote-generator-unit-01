@@ -16,10 +16,18 @@ project 1 - A Random Quote Generator
     //pull a quote from our quotes array  
     const quoteObject = getRandomQuote(array[array.length - 1]);
     //add content to elements
+    //adds the quote
     quoteElement.textContent = quoteObject.quoteBody; 
-    personElement.textContent = quoteObject.person;
-    yearElement.textContent = quoteObject.year;
-    citationElement.textContent = quoteObject.citation;
+    //adds the year
+    const citationObject = quoteObject.citation;
+    const yearObject = quoteObject.date;
+    //adds the citation but in some cases there wont be one so add a blank space
+    const citationString = citationObject ? citationObject : " ";
+    //adds year to the string
+    const yearString = yearObject ? yearObject : "  ";
+
+    personElement.innerHTML = quoteObject.person + '<span class="citation">' + citationString + '</span><span class="year">' + yearString + '</span>'
+
   }
 
   /***
