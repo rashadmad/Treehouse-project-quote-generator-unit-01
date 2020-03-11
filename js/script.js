@@ -18,15 +18,22 @@ project 1 - A Random Quote Generator
     //add content to elements
     //adds the quote
     quoteElement.textContent = quoteObject.quoteBody; 
-    //adds the year
+    //adds the citation object
     const citationObject = quoteObject.citation;
+    //adds the year object
     const yearObject = quoteObject.date;
+    //adds the life object
+    const lifeObject = quoteObject.life;
     //adds the citation but in some cases there wont be one so add a blank space
-    const citationString = citationObject ? '<span class="citation">' + citationObject + '</span>' : '<span class="citation"></span>';
+    const citationString = citationObject ? '<span class="citation">' + citationObject + '</span>' : '<span></span>';
     //adds year to the string
-    const yearString = '</span><span class="year">' + yearObject + '</span>';
+    const yearString = yearObject ? '<span class="year">' + yearObject + '</span>' : '<span></span>';
+    //
+    const lifeString = lifeObject ? '<span class="life">' + lifeObject + '</span>' : '<span></span>';
+    //adds a background image
     document.body.style.backgroundImage = "url(" + quoteObject.image + ")";
-    personElement.innerHTML = quoteObject.person + citationString + yearString
+    personElement.innerHTML = quoteObject.person + citationString + yearString + '</br>' + lifeString
+    //adds the lifetime
 
   }
 
@@ -35,8 +42,9 @@ project 1 - A Random Quote Generator
   ***/
   //add data to dom
    const printQuote = () => addQuotesToDom(pickedNumbersArray)
+   
    //makes this app work like a slide show 
-   setInterval(function(){printQuote()}, 4000);
+   setInterval(function(){printQuote()}, 3500);
 
   window.onload = () => printQuote();
 
