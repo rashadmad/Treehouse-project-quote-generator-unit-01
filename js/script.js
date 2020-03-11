@@ -22,12 +22,11 @@ project 1 - A Random Quote Generator
     const citationObject = quoteObject.citation;
     const yearObject = quoteObject.date;
     //adds the citation but in some cases there wont be one so add a blank space
-    const citationString = citationObject ? citationObject : "";
+    const citationString = citationObject ? '<span class="citation">' + citationObject + '</span>' : '<span class="citation"></span>';
     //adds year to the string
-    const yearString = yearObject ? yearObject : "";
+    const yearString = '</span><span class="year">' + yearObject + '</span>';
     document.body.style.backgroundImage = "url(" + quoteObject.image + ")";
-
-    personElement.innerHTML = quoteObject.person + '<span class="citation">' + citationString + '</span><span class="year">' + yearString + '</span>'
+    personElement.innerHTML = quoteObject.person + citationString + yearString
 
   }
 
@@ -36,6 +35,8 @@ project 1 - A Random Quote Generator
   ***/
   //add data to dom
    const printQuote = () => addQuotesToDom(pickedNumbersArray)
+   //makes this app work like a slide show 
+   setInterval(function(){printQuote()}, 4000);
 
   window.onload = () => printQuote();
 
